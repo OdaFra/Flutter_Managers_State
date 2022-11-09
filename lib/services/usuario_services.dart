@@ -6,7 +6,7 @@ class _UsuarioService {
   Usuario? _usuario;
 
   final StreamController<Usuario> _usuarioStreamController =
-      StreamController<Usuario>();
+      StreamController<Usuario>.broadcast();
 
   Usuario get usuario => _usuario!;
 
@@ -22,6 +22,10 @@ class _UsuarioService {
   void cambiarEdad(int edad) {
     _usuario!.edad = edad;
     _usuarioStreamController.add(_usuario!);
+  }
+
+  dispose() {
+    _usuarioStreamController.close();
   }
 }
 
