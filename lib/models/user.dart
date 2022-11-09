@@ -1,15 +1,7 @@
-
-
-class User {
-  
+class Usuario {
   String? nombre;
   int? edad;
   List<String>? profesiones;
 
-  User({ 
-    this.nombre, 
-    this.edad, 
-    this.profesiones 
-  });
-
+  Usuario({this.nombre, this.edad, this.profesiones});
 }
