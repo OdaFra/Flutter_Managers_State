@@ -39,12 +39,16 @@ class Pagina2Page extends StatelessWidget {
               child: const Text('Cambiar Edad',
                   style: TextStyle(color: Colors.white)),
               color: Colors.blue,
-              onPressed: () {}),
+              onPressed: () {
+                usuarioCubit.cambiarEdad(33);
+              }),
           MaterialButton(
               child: const Text('Añadir Profesion',
                   style: TextStyle(color: Colors.white)),
               color: Colors.blue,
-              onPressed: () {}),
+              onPressed: () {
+                usuarioCubit.agregarProfesion();
+              }),
         ],
       )),
     );
