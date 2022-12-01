@@ -13,6 +13,16 @@ class Pagina1Page extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Pagina 1'),
+        actions: [
+          IconButton(
+            onPressed: () {
+              BlocProvider.of<UserBloc>(context, listen: false).add(
+                ResetUser(),
+              );
+            },
+            icon: const Icon(Icons.delete_outline),
+          )
+        ],
       ),
       body: BlocBuilder<UserBloc, UserState>(
         builder: (context, state) {
@@ -56,7 +66,7 @@ class InformacionUsuario extends StatelessWidget {
           const Text('Profesiones',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
           const Divider(),
-          ...user.profesiones!
+          ...user.profesiones
               .map((prof) => const ListTile(title: Text('Profesion 1')))
               .toList(),
         ],
